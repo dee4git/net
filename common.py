@@ -26,3 +26,10 @@ def lastbitchanger(binstr, bits):
     newbin = s + rbin[bits::]
     finalbin = newbin[::-1]
     return finalbin
+
+def binarymaker(str):
+    split = str.split(".")
+    s = ""
+    for i in split:
+        s += (format(int(i), '08b'))
+    return s

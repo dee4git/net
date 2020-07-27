@@ -1,3 +1,7 @@
-
+last_passed=""
 def fh(base):
-    print("Working")
+
+    if last_passed=="":
+        pass
+
+
