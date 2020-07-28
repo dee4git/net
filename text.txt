@@ -1,3 +1,57 @@
+IP address ( 32 bit )
+From first octet
+
+1. Class A 1-127 (N.H.H.H)
+Network 8 bit
+Host: 24 bit ( 2^24-2) we can connect in a network of class of A 16 million
+255.0.0.0
+
+2.Class B 128-191 (N.N.H.H) (length of the network is fixed and sub net is fixed)
+Network 16 bit
+Host: 16 bit ( 2^16-2) we can connect in a network of class of B=65534
+255.255.0.0
+
+3. Class B 192-223 (N.N.N.H)
+Network  bit 24 bit
+Host: 8 bit ( 2^8-2) we can connect in a network of class of B=254
+255.255.255.0
+
+
+Unicast:
+Multicast:
+Broadcast:
+
+Each dept will be under one LAN
+You have no barrier:
+
+CSE=1200 - 11 bits : 21+11
+EEE=600 - 10  bits : 22+10
+CE = 700 - 10 bits : 22+10
+PHA = 1000 - 10 bits : 22+10
+
+N.N.H.H
+
+in binary:
+CSE=1200 - 11 bits : 21+11
+1111111.1111111.1111000.0000000
+255.255.248.0
+EEE=600 - 10  bits : 22+10
+1111111.1111111.1111100.0000000
+255.255.252.0
+CE = 700 - 10 bits : 22+10
+1111111.1111111.1111100.0000000
+255.255.252.0
+PHA = 1000 - 10 bits : 22+10
+1111111.1111111.1111100.0000000
+255.255.252.0
+-----------------------------------------------------------
+-----------------------------------------------------------
+CSE=1200 - 11 bits : 21+11 - Done
+EEE=600 - 10  bits : 22+10 - Done
+CE = 700 - 10 bits : 22+10
+PHA = 1000 - 10 bits : 22+10
+-------------------------------------------------------------
+-------------------------------------------------------------
 package { network address, subnet mask, first host, last host, broadcast address}
 ---------------------------------------------------------------------------------------------------------------
 For CSE:
@@ -6,8 +60,8 @@ Base address: 172.12.0.0/16
 in binary:
 CSE=1200 - 11 bits : 21+11
 172.12.00000 000.00000000/21
------------ -----------------
-Network           Host
+---------------------- ------------------------
+Network             Host
 
 Network address: 172.12.0.0/21
 Subnet Mask: 255.255.248.0
@@ -24,3 +78,35 @@ Broadcast address:
 172.12.00000 000.00000000
 ---------------------- ------------------------
 172.12.00000 111.11111111
+
+-------------------------------------------------------------
+package { network address, subnet mask, first host, last host, broadcast address}
+---------------------------------------------------------------------------------------------------------------
+For PHA:
+--------------
+Network address : 172.12.8.0/10
+subnet mask : 255.255.252.0
+FH: 172.12.8.1
+LH: 172.12.11.254
+Binary equivalent of network address:
+
+172.12.000010 00.00000000
+------------------------  ---------------------
+172.12.000010  11.11111111
+172.12.11.255
+-------------------------------------------------------------
+package { network address, subnet mask, first host, last host, broadcast address}
+---------------------------------------------------------------------------------------------------------------
+For CE:
+--------------
+Network address : 172.12.12.0/22
+subnet mask : 255.255.252.0
+FH: 172.12.12.0
+LH: 172.12.15.254
+Binary equivalent of network address:
+
+172.12.000011 00.00000000
+------------------------  ---------------------
+172.12.000011 11.11111111
+172.12.15.255
+

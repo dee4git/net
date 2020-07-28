@@ -6,21 +6,17 @@ from first_host import  fh as fhh
 from last_host import lh as lhh
 from bc import bcad as bcadrs
 
-host=1200
-base="172.12.0.0"
+host=63
+base="192.168.54.0"
 
 
 def mainFun(host,base):
-    net_adrs= adrs(base)
-    hostnet= subnetMask(host)
-    fh= fhh(host)
+    net_adrs= adrs(host,base)
+    subnet= subnetMask(host)
     lh= lhh(host,base)
-    ba=bcadrs(host)
     print("Network Address: ",net_adrs)
-    print("Subnet Mask: ",hostnet)
-    print("First Host: ",fh)
-    print("Last host: ",lh)
-    print("Boradcast Address: ",ba)
+    print("Subnet Mask: ",subnet)
+    print("Broadcast Address: ",lh)
 
 
 mainFun(host,base)
